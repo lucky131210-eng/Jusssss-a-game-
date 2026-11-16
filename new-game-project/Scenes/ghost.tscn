@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dm2lfii4ja50u"]
+
+[ext_resource type="Texture2D" uid="uid://cwl878bitjvdp" path="res://Assets/ghostface_scary_movie_sprite_sheet_by_spider_monkie_digldy8-pre.png" id="1_3mxmt"]
+[ext_resource type="Script" uid="uid://ctorrxihp1l6j" path="res://Scenes/ghost.gd" id="1_e3r4w"]
+[ext_resource type="AudioStream" uid="uid://bkqfkf4yqo5yf" path="res://Assets/Punch Sound effect (mp3cut.net).mp3" id="3_108wt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uta0k"]
+atlas = ExtResource("1_3mxmt")
+region = Rect2(0, 296, 92, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st3at"]
+atlas = ExtResource("1_3mxmt")
+region = Rect2(92, 296, 92, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3r4w"]
+atlas = ExtResource("1_3mxmt")
+region = Rect2(0, 576, 109, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_108wt"]
+atlas = ExtResource("1_3mxmt")
+region = Rect2(109, 576, 109, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3btnm"]
+atlas = ExtResource("1_3mxmt")
+region = Rect2(218, 576, 109, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taxxh"]
+atlas = ExtResource("1_3mxmt")
+region = Rect2(327, 576, 109, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thbej"]
+atlas = ExtResource("1_3mxmt")
+region = Rect2(436, 576, 109, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hbae"]
+atlas = ExtResource("1_3mxmt")
+region = Rect2(184, 296, 92, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoekh"]
+atlas = ExtResource("1_3mxmt")
+region = Rect2(276, 296, 92, 148)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdkt2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uta0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st3at")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3r4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_108wt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3btnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taxxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thbej")
+}],
+"loop": true,
+"name": &"Punch",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uta0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st3at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hbae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoekh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mxmt"]
+radius = 15.0
+height = 98.0
+
+[node name="Ghost" type="Node2D" unique_id=1337933002]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1229720012]
+position = Vector2(1, 1)
+script = ExtResource("1_e3r4w")
+
+[node name="Ghostanimation" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=654909267]
+scale = Vector2(0.9924277, 1)
+sprite_frames = SubResource("SpriteFrames_vdkt2")
+animation = &"Punch"
+frame = 1
+frame_progress = 0.98336303
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=126543326]
+position = Vector2(-9, 4)
+shape = SubResource("CapsuleShape2D_3mxmt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2080231868]
+stream = ExtResource("3_108wt")

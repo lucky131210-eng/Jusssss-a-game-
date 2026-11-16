@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfaywurx1a4id"
+path="res://.godot/imported/Punch Sound effect.mp3-44327c506046e2a3d514aa5cf52573d0.mp3str"
+
+[deps]
+
+source_file="res://Assets/Punch Sound effect.mp3"
+dest_files=["res://.godot/imported/Punch Sound effect.mp3-44327c506046e2a3d514aa5cf52573d0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

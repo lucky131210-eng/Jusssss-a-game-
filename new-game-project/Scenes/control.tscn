@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dm0a8tcy3qrnr"]
+
+[ext_resource type="Script" uid="uid://c3tw06yamxteg" path="res://Scenes/control.gd" id="1_cgmvo"]
+[ext_resource type="Texture2D" uid="uid://wo2h7wu4358m" path="res://Assets/images.jpg" id="1_sjmnu"]
+
+[node name="Control" type="Control" unique_id=508013642]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0306007, 1.0068774)
+script = ExtResource("1_cgmvo")
+
+[node name="Images" type="Sprite2D" parent="." unique_id=816510532]
+position = Vector2(283.32986, 184.72952)
+rotation = -0.0065563824
+scale = Vector2(0.7828429, 0.88606817)
+texture = ExtResource("1_sjmnu")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1132070946]
+light_mask = 831
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.3244
+offset_top = -23.045074
+offset_right = -27.324402
+offset_bottom = 7.9549255
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.024977, 2.4340363)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=724827894]
+custom_minimum_size = Vector2(2, 4)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1218603926]
+layout_mode = 2
+text = "Start"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=105355120]
+custom_minimum_size = Vector2(2, 4)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.96400005
+anchor_bottom = 1.0
+offset_left = 228.02237
+offset_top = 251.2719
+offset_right = -204.81766
+offset_bottom = -67.72809
+grow_horizontal = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=907167365]
+layout_mode = 2
+text = "User Manual"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
